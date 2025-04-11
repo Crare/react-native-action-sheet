@@ -237,6 +237,10 @@ export default class CustomActionSheet extends React.Component<Props, State> {
     );
   };
 
+  dismissActionSheet = () => {
+    this._animateOut();
+  };
+
   _selectCancelButton = () => {
     const { options } = this.state;
 

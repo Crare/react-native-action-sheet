@@ -25,6 +25,11 @@ export default React.forwardRef<ActionSheetProviderRef, Props>(function ActionSh
           actionSheetRef.current.showActionSheetWithOptions(options, callback);
         }
       },
+      dismissActionSheet: () => {
+        if (actionSheetRef.current) {
+          actionSheetRef.current.dismissActionSheet();
+        }
+      },
     }),
     [actionSheetRef]
   );
@@ -35,6 +40,7 @@ export default React.forwardRef<ActionSheetProviderRef, Props>(function ActionSh
       // backwards compatible with 13.x before context was being passed right on the ref
       getContext: () => context,
       showActionSheetWithOptions: context.showActionSheetWithOptions,
+      dismissActionSheet: context.dismissActionSheet,
     }),
     [context]
   );

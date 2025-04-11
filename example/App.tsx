@@ -77,7 +77,7 @@ class App extends React.Component<Props, State> {
   }
 
   _renderButtons() {
-    const { showActionSheetWithOptions } = this.props;
+    const { showActionSheetWithOptions, dismissActionSheet } = this.props;
     return (
       <View
         style={{
@@ -227,6 +227,15 @@ class App extends React.Component<Props, State> {
             </View>
           </Modal>
         )}
+
+        <TouchableOpacity
+          onPress={() => {
+            setTimeout(() => {
+              dismissActionSheet();
+            }, 5000);
+          }}>
+          <Text style={styles.link}>Dismiss any open ActionSheet after 5 seconds.</Text>
+        </TouchableOpacity>
       </View>
     );
   }

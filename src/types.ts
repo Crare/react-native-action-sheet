@@ -6,6 +6,7 @@ export interface ActionSheetProps {
     options: ActionSheetOptions,
     callback: (i?: number) => void | Promise<void>
   ) => void;
+  dismissActionSheet: () => void;
 }
 
 export interface ActionSheetProviderRef extends ActionSheetProps {
